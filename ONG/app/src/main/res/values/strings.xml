@@ -45,4 +45,9 @@
     </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="back4app_client_key">CA2Cva5asXJq8Lo1MDQmzWxjuiAom4q9kQ2emqep</string>
+    <string name="back4app_app_id">dlfVXBZihOE1CeOBE9sE1KvfYxeqiwCjNzDh1h7C</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
 </resources>
