@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     val miRepositorio by lazy { Repositorio(BBDDParse()) }
-    val miViewModel:RegistroNieblaViewModel by viewModels { PeliculaViewModelFactory(miRepositorio) }
+    val miViewModel:RegistroNieblaViewModel by viewModels { RegistroNieblaViewModelFactory(miRepositorio) }
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)

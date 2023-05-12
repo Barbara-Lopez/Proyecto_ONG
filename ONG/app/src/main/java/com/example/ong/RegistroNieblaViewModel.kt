@@ -32,7 +32,7 @@ class RegistroNieblaViewModel(private val miRepositorio: Repositorio): ViewModel
         }
     }
 
-class PeliculaViewModelFactory(private val miRepositorio: Repositorio): ViewModelProvider.Factory{
+class RegistroNieblaViewModelFactory(private val miRepositorio: Repositorio): ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(RegistroNieblaViewModel::class.java)){
             @Suppress("UNCHECKED_CAST")
