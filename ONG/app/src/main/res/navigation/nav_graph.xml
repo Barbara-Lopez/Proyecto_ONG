@@ -34,8 +34,8 @@
     <fragment
         android:id="@+id/thirdFragment"
         android:name="com.example.ong.ThirdFragment"
-        android:label="fragment_third"
-        tools:layout="@layout/fragment_third" >
+        android:label="Registro Datos"
+        tools:layout="@layout/fragment_third">
         <action
             android:id="@+id/action_thirdFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
