@@ -48,19 +48,19 @@ class BBDDParse {
             }
         }
     }
-    fun cogerUsuario(user:String): LiveData<List<Usuario>> {
+    fun cogerUsuario(nombre:String): LiveData<List<Usuario>> {
         val misUsuarios: MutableLiveData<List<Usuario>> = MutableLiveData()
         // Configure Query
         val query = ParseQuery.getQuery<ParseObject>("Usuario")
         // Sorts the results in ascending order by the itemName field
-        query.whereEqualTo("nombre",user)
+        query.whereEqualTo("nombre",nombre)
         query.findInBackground { objects, e ->
             if (e == null) {
                 // Adding objects into the Array
                 val user1 = objects.map { i ->
                     Usuario(
                         i.getString("nombre") ?: "",
-                        i.getString("contrasena") ?: "",
+                        i.getString("contrasena") ?: ""
                     )
                 }
                 misUsuarios.postValue(user1)
