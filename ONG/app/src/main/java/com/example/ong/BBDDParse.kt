@@ -88,6 +88,8 @@ class BBDDParse {
         registroCaudalimetro.put("metros3", caudalimetro.metros3)
         registroCaudalimetro.put("litros", caudalimetro.litros)
         registroCaudalimetro.put("mililitros", caudalimetro.mililitros)
+        registroCaudalimetro.put("user", caudalimetro.user)
+        registroCaudalimetro.put("fecha", caudalimetro.fecha)
         registroCaudalimetro.saveInBackground {
             if (it != null) {
                 it.localizedMessage?.let { message ->
