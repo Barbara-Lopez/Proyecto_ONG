@@ -43,6 +43,11 @@
     <fragment
         android:id="@+id/fourthFragment"
         android:name="com.example.ong.FourthFragment"
-        android:label="fragment_fourth"
+        android:label="Caudalímetro"
         tools:layout="@layout/fragment_fourth" />
+    <fragment
+        android:id="@+id/fifthFragment"
+        android:name="com.example.ong.FifthFragment"
+        android:label="FAMILIAS"
+        tools:layout="@layout/fragment_fifth" />
 </navigation>
