@@ -2,3 +2,8 @@
 **Este proyecto está hecho por Nerea y Bárbara**
 
 [Sketches](https://github.com/Barbara-Lopez/Proyecto_ONG/edit/main/Registro.pdf "Sketches")
+
+- Una vez inicias la aplicación te encuentras con una pantalla de inicio sesion.
+  - Hay dos opciones:
+    - Iniciar sesion: te saldrán todos los registros que has hecho y para poder meter tanto los registros diarios como los del caudallimetro.
+    -  Registrarse: te saldrá una ventana para poder registrar un nuevo usuario donde aparte del usuario y contraseña se añadirá el lugar de donde es el nuevo usuario.
