@@ -1,3 +1,4 @@
 # Proyecto_ONG
 **Este proyecto está hecho por Nerea y Bárbara**
-[Sketches]: /ruta/a/la/imagen2.jpg 
+
+[Sketches]: https://github.com/Barbara-Lopez/Proyecto_ONG/edit/main/Registro.pdf
