@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.ong.databinding.LayoutRegistroBinding
+import com.example.ong.databinding.FragmentFifthBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -16,11 +16,11 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Registro.newInstance] factory method to
+ * Use the [VisualizarRegistro.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Registro : Fragment() {
-    private var _binding: LayoutRegistroBinding? = null
+class VisualizarRegistro : Fragment() {
+    private var _binding: FragmentFifthBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -32,7 +32,7 @@ class Registro : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = LayoutRegistroBinding.inflate(inflater, container, false)
+        _binding = FragmentFifthBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -41,9 +41,13 @@ class Registro : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var usser1 = (activity as MainActivity).user
         (activity as MainActivity).miViewModel.mostrarTodoUser(usser1)
-        miRecycleView = binding.
-        miRecycleView.layoutManager = LinearLayoutManager(activity)
-        miRecycleView.adapter = Adaptador((activity as MainActivity).miViewModel.listaPeliculas)
+
+        (activity as MainActivity).miViewModel.listaPeliculas.observe(activity as MainActivity){
+            miRecycleView = binding.rvPosiciones
+            miRecycleView.layoutManager = LinearLayoutManager(activity)
+            miRecycleView.adapter = Adaptador(it)
+        }
+
 
     }
 
