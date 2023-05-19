@@ -39,8 +39,9 @@ class Registro : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        miRecycleView = binding.rvPeliculas
+        var usser1 = (activity as MainActivity).user
+        (activity as MainActivity).miViewModel.mostrarTodoUser(usser1)
+        miRecycleView = binding.
         miRecycleView.layoutManager = LinearLayoutManager(activity)
         miRecycleView.adapter = Adaptador((activity as MainActivity).miViewModel.listaPeliculas)
 

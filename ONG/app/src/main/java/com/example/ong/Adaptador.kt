@@ -4,11 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.os.bundleOf
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 
-class Adaptador(var registros: LiveData<List<RegistroNiebla>>) : RecyclerView.Adapter<Adaptador.ViewHolder>() {
+class Adaptador(var registros: List<RegistroNiebla>) : RecyclerView.Adapter<Adaptador.ViewHolder>() {
     class ViewHolder (v: View) : RecyclerView.ViewHolder(v){
         var tvFecha : TextView
         var tvNiebla : TextView
@@ -44,11 +42,11 @@ class Adaptador(var registros: LiveData<List<RegistroNiebla>>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var registro = registros[position]
-        holder.tvFecha.text = registro.fecha
-        holder.tvNiebla.text = registro.niebla
-        holder.tvIntensidadNiebla.text= registro.intensidadNiebla
-        holder.tvFranjaHoraria.text= registro.franjaHoraria
-        holder.tvDuracionLluvia.text= registro.duracionLluvia
+        holder.tvFecha.text = "Fecha: "+registro.fecha
+        holder.tvNiebla.text = "Nievla:" +registro.niebla
+        holder.tvIntensidadNiebla.text= "Densidad niebla: " +registro.intensidadNiebla
+        holder.tvFranjaHoraria.text= "Franja horaria: "+registro.franjaHoraria
+        holder.tvDuracionLluvia.text= "Duración lluvia: "+registro.duracionLluvia
         holder.tvDuracionCortesAgua.text= registro.duracionCortesAgua
         holder.id = position
     }
