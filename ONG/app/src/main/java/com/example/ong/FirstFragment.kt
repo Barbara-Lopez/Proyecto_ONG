@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.ong.databinding.FragmentFirstBinding
+import java.lang.Exception
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -31,7 +33,34 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var user = binding.editTextUsuario.text.toString()
+        var passwd = binding.editTextPassword.text.toString()
 
+        binding.btIniciarSesion.setOnClickListener {
+            try {
+                (activity as MainActivity).miViewModel.cogerUsuario(user)
+                (activity as MainActivity).miViewModel.listaUser.observe(activity as MainActivity){
+
+                    if (it.isEmpty()) {
+                        Toast.makeText(activity,"Usuario no encontrado, vuelva a escribirlo",Toast.LENGTH_LONG).show()
+                        binding.editTextUsuario.text
+                        binding.editTextPassword.text
+                    }else{
+                        if (it[0].contrasena == passwd){
+                            findNavController().navigate(R.id.action_FirstFragment_to_fifthFragment)
+                        }else{
+                            Toast.makeText(activity,"Contraseña erronea, vuelva a escribirlo",Toast.LENGTH_LONG).show()
+                            binding.editTextUsuario.text
+                            binding.editTextPassword.text
+                        }
+                    }
+
+                }
+            }catch (e:Exception){
+                Toast.makeText(activity,""+e.message,Toast.LENGTH_LONG).show()
+            }
+
+        }
 
     }
 

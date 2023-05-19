@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_thirdFragment"
             app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_fifthFragment"
+            app:destination="@id/fifthFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -44,10 +47,19 @@
         android:id="@+id/fourthFragment"
         android:name="com.example.ong.FourthFragment"
         android:label="Caudalímetro"
-        tools:layout="@layout/fragment_fourth" />
+        tools:layout="@layout/fragment_fourth" >
+        <action
+            android:id="@+id/action_fourthFragment_to_fifthFragment"
+            app:destination="@id/fifthFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fifthFragment"
-        android:name="com.example.ong.FifthFragment"
+        android:name="com.example.ong.VisualizarRegistro"
         android:label="FAMILIAS"
-        tools:layout="@layout/fragment_fifth" />
+        tools:layout="@layout/fragment_fifth" >
+        <action
+            android:id="@+id/action_fifthFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
+
+    </fragment>
 </navigation>

@@ -48,7 +48,7 @@ class BBDDParse {
             }
         }
     }
-    fun cogerUsuario(nombre:String): LiveData<List<Usuario>> {
+    fun cogerUsuario(nombre: String): LiveData<List<Usuario>> {
         val misUsuarios: MutableLiveData<List<Usuario>> = MutableLiveData()
         // Configure Query
         val query = ParseQuery.getQuery<ParseObject>("Usuario")
