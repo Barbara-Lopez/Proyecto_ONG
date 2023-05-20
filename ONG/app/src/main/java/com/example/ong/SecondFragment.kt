@@ -37,26 +37,23 @@ class SecondFragment : Fragment() {
         binding.btGuardarRegistro.setOnClickListener {
             try {
                 if(binding.editTextUsuarioRegistro.text.toString().isEmpty()){
-                    Toast.makeText(activity,"El usuario no puede estar vacío", Toast.LENGTH_LONG).show()
+                    throw Exception("El usuario no puede estar vacío")
                 }
                 if(binding.editTextPasswordRegistro.text.toString().isEmpty()){
-                    Toast.makeText(activity,"La contraseña no puede estar vacío", Toast.LENGTH_LONG).show()
+                    throw Exception("La contraseña no puede estar vacío")
                 }
                 if(binding.spinnerRegion.selectedItem.toString().isEmpty()){
-                    Toast.makeText(activity,"Selecione una region, no puede estar vacío", Toast.LENGTH_LONG).show()
+                    throw Exception("Selecione una region, no puede estar vacío")
                 }
-                if(binding.editTextUsuarioRegistro.text.toString().isEmpty() == false and
-                    binding.editTextPasswordRegistro.text.toString().isEmpty() == false
-                    and binding.spinnerRegion.selectedItem.toString().isEmpty() == false){
-                    var user = binding.editTextUsuarioRegistro.text.toString()
-                    var passwd = binding.editTextPasswordRegistro.text.toString()
-                    var region = binding.spinnerRegion.selectedItem.toString()
-                    var usuario:Usuario = Usuario(user,passwd,region)
-                    (activity as MainActivity).miViewModel.insertarUsuario(usuario)
-                    (activity as MainActivity).user = user
-                    findNavController().navigate(R.id.action_SecondFragment_to_fifthFragment)
 
-                }
+                var user = binding.editTextUsuarioRegistro.text.toString()
+                var passwd = binding.editTextPasswordRegistro.text.toString()
+                var region = binding.spinnerRegion.selectedItem.toString()
+                var usuario:Usuario = Usuario(user,passwd,region)
+                (activity as MainActivity).miViewModel.insertarUsuario(usuario)
+                (activity as MainActivity).user = user
+                findNavController().navigate(R.id.action_SecondFragment_to_fifthFragment)
+
             }catch (e: Exception){
                 Toast.makeText(activity,""+e.message, Toast.LENGTH_LONG).show()
             }

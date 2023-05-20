@@ -40,31 +40,30 @@ class FirstFragment : Fragment() {
         binding.btIniciarSesion.setOnClickListener {
             try {
                 if(binding.editTextUsuario.text.toString().isEmpty()){
-                    Toast.makeText(activity,"El usuario no puede estar vacío",Toast.LENGTH_LONG).show()
+                    throw Exception("El usuario no puede estar vacío")
                 }
                 if(binding.editTextPassword.text.toString().isEmpty()){
-                    Toast.makeText(activity,"La contraseña no puede estar vacío",Toast.LENGTH_LONG).show()
+                    throw Exception("La contraseña no puede estar vacío")
                 }
-                if(binding.editTextUsuario.text.toString().isEmpty() == false and binding.editTextPassword.text.toString().isEmpty() == false){
-                    var user = binding.editTextUsuario.text.toString()
-                    var passwd = binding.editTextPassword.text.toString()
 
-                    (activity as MainActivity).miViewModel.cogerUsuario(user)
-                    (activity as MainActivity).miViewModel.listaUser.observe(activity as MainActivity){
+                var user = binding.editTextUsuario.text.toString()
+                var passwd = binding.editTextPassword.text.toString()
 
-                        if (it.isEmpty()) {
-                            Toast.makeText(activity,"Usuario no encontrado, vuelva a escribirlo",Toast.LENGTH_LONG).show()
-                            binding.editTextUsuario.text
-                            binding.editTextPassword.text
+                (activity as MainActivity).miViewModel.cogerUsuario(user)
+                (activity as MainActivity).miViewModel.listaUser.observe(activity as MainActivity){
+
+                    if (it.isEmpty()) {
+                        Toast.makeText(activity,"Usuario no encontrado, vuelva a escribirlo",Toast.LENGTH_LONG).show()
+                        binding.editTextUsuario.text.clear()
+                        binding.editTextPassword.text.clear()
+                    }else{
+                        if (it[0].contrasena == passwd){
+                            (activity as MainActivity).user = user
+                            findNavController().navigate(R.id.action_FirstFragment_to_fifthFragment)
                         }else{
-                            if (it[0].contrasena == passwd){
-                                (activity as MainActivity).user = user
-                                findNavController().navigate(R.id.action_FirstFragment_to_fifthFragment)
-                            }else{
-                                Toast.makeText(activity,"Contraseña erronea, vuelva a escribirlo",Toast.LENGTH_LONG).show()
-                                binding.editTextUsuario.text.clear()
-                                binding.editTextPassword.text.clear()
-                            }
+                            Toast.makeText(activity,"Contraseña erronea, vuelva a escribirlo",Toast.LENGTH_LONG).show()
+                            binding.editTextUsuario.text.clear()
+                            binding.editTextPassword.text.clear()
                         }
                     }
                 }
