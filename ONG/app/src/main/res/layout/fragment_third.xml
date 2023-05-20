@@ -21,14 +21,15 @@
             app:layout_constraintHorizontal_bias="0.523"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textFranjaHoraria"
-            app:layout_constraintVertical_bias="0.233" />
+            app:layout_constraintVertical_bias="0.233"
+            android:entries="@array/siNo"/>
 
         <EditText
             android:id="@+id/editTextFecha"
             android:layout_width="275dp"
             android:layout_height="70dp"
             android:ems="13"
-            android:hint="Fecha"
+            android:hint="12/12/2003 ; 12-12-2003"
             android:inputType="text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +43,7 @@
             android:layout_width="291dp"
             android:layout_height="78dp"
             android:ems="10"
-            android:hint="Duración"
+            android:hint="1.00 ; 0.45"
             android:inputType="text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -84,10 +85,11 @@
             app:layout_constraintHorizontal_bias="0.453"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textNiebla"
-            app:layout_constraintVertical_bias="0.019" />
+            app:layout_constraintVertical_bias="0.019"
+            android:entries="@array/siNo"/>
 
         <Spinner
-            android:id="@+id/spinnerIntensidadSiNo"
+            android:id="@+id/spinnerIntensidad"
             android:layout_width="293dp"
             android:layout_height="81dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +97,8 @@
             app:layout_constraintHorizontal_bias="0.567"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textIntensidad"
-            app:layout_constraintVertical_bias="0.048" />
+            app:layout_constraintVertical_bias="0.048"
+            android:entries="@array/intensidadNiebla"/>
 
         <Spinner
             android:id="@+id/spinnerCortesAguaSiNo"
@@ -106,7 +109,8 @@
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textCORTESDEAGUA"
-            app:layout_constraintVertical_bias="0.121" />
+            app:layout_constraintVertical_bias="0.121"
+            android:entries="@array/siNo"/>
 
         <TextView
             android:id="@+id/textCORTESDEAGUA"
@@ -126,7 +130,7 @@
             android:layout_width="275dp"
             android:layout_height="49dp"
             android:ems="10"
-            android:hint="Duración"
+            android:hint="1.00 ; 0.45"
             android:inputType="text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -157,7 +161,8 @@
             app:layout_constraintHorizontal_bias="0.535"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textFranjaHoraria"
-            app:layout_constraintVertical_bias="0.038" />
+            app:layout_constraintVertical_bias="0.038"
+            android:entries="@array/franjaHoraria"/>
 
         <TextView
             android:id="@+id/textIntensidad"
@@ -180,7 +185,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.221"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerIntensidadSiNo"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerIntensidad"
             app:layout_constraintVertical_bias="0.032" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

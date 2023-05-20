@@ -58,11 +58,12 @@ class FirstFragment : Fragment() {
                             binding.editTextPassword.text
                         }else{
                             if (it[0].contrasena == passwd){
+                                (activity as MainActivity).user = user
                                 findNavController().navigate(R.id.action_FirstFragment_to_fifthFragment)
                             }else{
                                 Toast.makeText(activity,"Contraseña erronea, vuelva a escribirlo",Toast.LENGTH_LONG).show()
-                                binding.editTextUsuario.text
-                                binding.editTextPassword.text
+                                binding.editTextUsuario.text.clear()
+                                binding.editTextPassword.text.clear()
                             }
                         }
                     }

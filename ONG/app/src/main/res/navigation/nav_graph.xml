@@ -28,6 +28,9 @@
         tools:layout="@layout/fragment_second">
 
         <action
+            android:id="@+id/action_SecondFragment_to_fifthFragment"
+            app:destination="@id/fifthFragment" />
+        <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
         <action

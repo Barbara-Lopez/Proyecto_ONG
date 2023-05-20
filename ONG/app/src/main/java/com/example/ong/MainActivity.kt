@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     val miRepositorio by lazy { Repositorio(BBDDParse()) }
     val miViewModel:RegistroNieblaViewModel by viewModels { RegistroNieblaViewModelFactory(miRepositorio) }
-    val user = ""
+    var user = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
