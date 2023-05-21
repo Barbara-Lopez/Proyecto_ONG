@@ -75,7 +75,7 @@ class ThirdFragment : Fragment() {
                             throw Exception("Escriba la duracion de la lluvia si ha puesto que si antes")
                         } else {
                             if (binding.editTextDuracionLluvia.text.toString().toFloat() <= 0) {
-                                throw Exception("Escriba la duración de la lluvia en numeros (1.00 ; 0.45)")
+                                throw Exception("Escriba la duración de la lluvia en numeros mayores al 0 (1.00 ; 0.45)")
                             }
                         }
                     }
@@ -88,7 +88,7 @@ class ThirdFragment : Fragment() {
                             throw Exception("Escriba la duracion de los cortes de agua si ha puesto que si antes")
                         } else {
                             if (binding.editTextDuracionCorteAgua.text.toString().toFloat() <= 0) {
-                                throw Exception("Escriba la duración de los cortes de agua en numeros (1.00 ; 0.45)")
+                                throw Exception("Escriba la duración de los cortes de agua en numeros mayores al 0 (1.00 ; 0.45)")
                             }
                         }
                     }
