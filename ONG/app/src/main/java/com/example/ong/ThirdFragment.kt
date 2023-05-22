@@ -48,7 +48,7 @@ class ThirdFragment : Fragment() {
                     throw Exception("Tiene que escribir la fecha")
                 } else {
                     val p: Pattern =
-                        Pattern.compile("^(?:0?[1-9]|1[1-2])([\\-/.])(3[01]|[12][0-9]|0?[1-9])\\1\\d{4}\$")
+                        Pattern.compile("^([0-2][0-9]|3[0-1])(\\/|-)(0[1-9]|1[0-2])\\2(\\d{4})\$")
                     val m: Matcher = p.matcher(binding.editTextFecha.text.toString())
                     if (!m.matches()) {
                         throw Exception("La fecha tiene que ser: DD-MM-AAAA , DD/MM/AAAA ")
@@ -111,8 +111,8 @@ class ThirdFragment : Fragment() {
                 if (binding.spinnerCortesAguaSiNo.selectedItem.toString().lowercase() == "si"){
                     duracionCortesAgua = binding.editTextDuracionCorteAgua.text.toString()
                 }
-
-                var registroNiebla = RegistroNiebla(fecha,niebla,intensidadNiebla,franjaHoraria,duracionLluvia,duracionCortesAgua,(activity as MainActivity).user)
+                var usuario = (activity as MainActivity).user
+                var registroNiebla = RegistroNiebla(fecha,niebla,intensidadNiebla,franjaHoraria,duracionLluvia,duracionCortesAgua,usuario)
                 (activity as MainActivity).miViewModel.insertar(registroNiebla)
                 findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment)
 

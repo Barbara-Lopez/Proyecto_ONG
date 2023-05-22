@@ -6,15 +6,17 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class Adaptador(var registros: List<RegistroNiebla>) : RecyclerView.Adapter<Adaptador.ViewHolder>() {
-    class ViewHolder (v: View) : RecyclerView.ViewHolder(v){
-        var tvFecha : TextView
-        var tvNiebla : TextView
+class Adaptador(var registros: List<RegistroNiebla>) :
+    RecyclerView.Adapter<Adaptador.ViewHolder>() {
+    class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+        var tvFecha: TextView
+        var tvNiebla: TextView
         var tvIntensidadNiebla: TextView
         var tvFranjaHoraria: TextView
-        var tvDuracionLluvia : TextView
-        var tvDuracionCortesAgua : TextView
-        var id:Int=-1
+        var tvDuracionLluvia: TextView
+        var tvDuracionCortesAgua: TextView
+        var id: Int = -1
+
         init {
             tvFecha = v.findViewById(R.id.tvFecha)
             tvNiebla = v.findViewById(R.id.tvNiebla)
@@ -31,23 +33,23 @@ class Adaptador(var registros: List<RegistroNiebla>) : RecyclerView.Adapter<Adap
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.layout_registro,parent,false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.layout_registro, parent, false)
         return ViewHolder(v)
 
     }
 
     override fun getItemCount(): Int {
-        return registros.size
+        return registros.count()
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var registro = registros[position]
-        holder.tvFecha.text = "Fecha: "+registro.fecha
-        holder.tvNiebla.text = "Nievla:" +registro.niebla
-        holder.tvIntensidadNiebla.text= "Densidad niebla: " +registro.intensidadNiebla
-        holder.tvFranjaHoraria.text= "Franja horaria: "+registro.franjaHoraria
-        holder.tvDuracionLluvia.text= "Duración lluvia: "+registro.duracionLluvia
-        holder.tvDuracionCortesAgua.text= registro.duracionCortesAgua
+        holder.tvFecha.text = "Fecha: " + registro.fecha
+        holder.tvNiebla.text = "Niebla:" + registro.niebla
+        holder.tvIntensidadNiebla.text = "Densidad niebla: " + registro.intensidadNiebla
+        holder.tvFranjaHoraria.text = "Franja horaria: " + registro.franjaHoraria
+        holder.tvDuracionLluvia.text = "Duración lluvia: " + registro.duracionLluvia
+        holder.tvDuracionCortesAgua.text = registro.duracionCortesAgua
         holder.id = position
     }
 }

@@ -46,10 +46,10 @@ class FirstFragment : Fragment() {
                     throw Exception("La contraseña no puede estar vacío")
                 }
 
-                var user = binding.editTextUsuario.text.toString()
+                var usuario = binding.editTextUsuario.text.toString()
                 var passwd = binding.editTextPassword.text.toString()
 
-                (activity as MainActivity).miViewModel.cogerUsuario(user)
+                (activity as MainActivity).miViewModel.cogerUsuario(usuario)
                 (activity as MainActivity).miViewModel.listaUser.observe(activity as MainActivity){
 
                     if (it.isEmpty()) {
@@ -58,7 +58,7 @@ class FirstFragment : Fragment() {
                         binding.editTextPassword.text.clear()
                     }else{
                         if (it[0].contrasena == passwd){
-                            (activity as MainActivity).user = user
+                            (activity as MainActivity).user = usuario
                             findNavController().navigate(R.id.action_FirstFragment_to_fifthFragment)
                         }else{
                             Toast.makeText(activity,"Contraseña erronea, vuelva a escribirlo",Toast.LENGTH_LONG).show()

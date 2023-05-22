@@ -12,23 +12,23 @@ class BBDDParse {
         val query = ParseQuery.getQuery<ParseObject>("RegistroNiebla")
         // Sorts the results in ascending order by the itemName field
         query.whereEqualTo("user",user)
-        query.findInBackground { objects, e ->
-            if (e == null) {
-                // Adding objects into the Array
-                val registro = objects.map { i ->
-                    RegistroNiebla(i.objectId,
-                        i.getString("fecha") ?: "",
-                        i.getString("niebla") ?: "",
-                        i.getString("intensidadNiebla") ?: "",
-                        i.getString("franjaHoraria") ?: "",
-                        i.getString("duracionLluvia") ?: "",
-                        i.getString("duracionCortesAgua") ?: "",
-                        i.getString("user") ?: "",
-                    )
+            query.findInBackground { objects, e ->
+                if (e == null) {
+                    // Adding objects into the Array
+                    val registro = objects.map { i ->
+                        RegistroNiebla(
+                            i.getString("fecha") ?: "",
+                            i.getString("niebla") ?: "",
+                            i.getString("intensidadNiebla") ?: "",
+                            i.getString("franjaHoraria") ?: "",
+                            i.getString("duracionLluvia") ?: "",
+                            i.getString("duracionCortesAgua") ?: "",
+                            i.getString("user") ?: ""
+                        )
+                    }
+                    misRegistros.postValue(registro)
                 }
-                misRegistros.postValue(registro)
             }
-        }
         return misRegistros
     }
     fun insertar(misRegistros:RegistroNiebla) {
@@ -39,6 +39,7 @@ class BBDDParse {
         registroNieblas.put("franjaHoraria", misRegistros.franjaHoraria)
         registroNieblas.put("duracionLluvia", misRegistros.duracionLluvia)
         registroNieblas.put("duracionCortesAgua", misRegistros.duracionCortesAgua)
+        registroNieblas.put("user", misRegistros.user)
         registroNieblas.saveInBackground {
             if (it != null) {
                 it.localizedMessage?.let { message ->

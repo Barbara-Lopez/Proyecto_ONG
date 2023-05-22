@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 
 class RegistroNieblaViewModel(private val miRepositorio: Repositorio): ViewModel()
     {
-        lateinit var listaPeliculas: LiveData<List<RegistroNiebla>>
+        lateinit var listaRegistros: LiveData<List<RegistroNiebla>>
         lateinit var listaUser: LiveData<List<Usuario>>
 
         fun insertar(miRegistroNiebla: RegistroNiebla) = viewModelScope.launch {
@@ -24,7 +24,7 @@ class RegistroNieblaViewModel(private val miRepositorio: Repositorio): ViewModel
         }
 
         fun mostrarTodoUser(user:String) = viewModelScope.launch {
-            listaPeliculas = miRepositorio.mostrarTodoUser(user)
+            listaRegistros = miRepositorio.mostrarTodoUser(user)
         }
 
         fun insertarCaudalimetro(caudalimetro: Caudalimetro) = viewModelScope.launch {
