@@ -19,7 +19,8 @@
         app:layout_constraintHorizontal_bias="0.418"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139" />
+        app:layout_constraintVertical_bias="0.139"
+        android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/editTextPasswordRegistro"
@@ -33,7 +34,8 @@
         app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsuarioRegistro"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.091"
+        android:textSize="20dp"/>
 
     <Spinner
         android:id="@+id/spinnerRegion"
@@ -45,7 +47,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPasswordRegistro"
         app:layout_constraintVertical_bias="0.137"
-        android:entries="@array/sitios"/>
+        android:entries="@array/sitios"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/btGuardarRegistro"
@@ -57,5 +60,6 @@
         app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerRegion"
-        app:layout_constraintVertical_bias="0.243" />
+        app:layout_constraintVertical_bias="0.243"
+        android:textSize="20dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

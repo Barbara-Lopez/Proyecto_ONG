@@ -45,14 +45,30 @@ class SecondFragment : Fragment() {
                 if(binding.spinnerRegion.selectedItem.toString().isEmpty()){
                     throw Exception("Selecione una region, no puede estar vacío")
                 }
-
                 var user = binding.editTextUsuarioRegistro.text.toString()
                 var passwd = binding.editTextPasswordRegistro.text.toString()
                 var region = binding.spinnerRegion.selectedItem.toString()
-                var usuario:Usuario = Usuario(user,passwd,region)
-                (activity as MainActivity).miViewModel.insertarUsuario(usuario)
-                (activity as MainActivity).user = user
-                findNavController().navigate(R.id.action_SecondFragment_to_fifthFragment)
+                var repe = false
+                (activity as MainActivity).miViewModel.cogerUsuario(user)
+                (activity as MainActivity).miViewModel.listaUser.observe(activity as MainActivity){
+
+                    if (it.isEmpty() == false) {
+                        Toast.makeText(activity,"Error al crear usuario, ya existe",Toast.LENGTH_LONG).show()
+                        repe = true
+
+                    }
+                    if (repe == false){
+                        var usuario:Usuario = Usuario(user,passwd,region)
+                        (activity as MainActivity).miViewModel.insertarUsuario(usuario)
+                        (activity as MainActivity).user = user
+                        findNavController().navigate(R.id.action_SecondFragment_to_fifthFragment)
+                    }else{
+                        findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+                    }
+                }
+
+
+
 
             }catch (e: Exception){
                 Toast.makeText(activity,""+e.message, Toast.LENGTH_LONG).show()

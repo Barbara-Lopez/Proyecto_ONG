@@ -22,7 +22,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textFranjaHoraria"
             app:layout_constraintVertical_bias="0.233"
-            android:entries="@array/siNo"/>
+            android:entries="@array/siNo"
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/editTextFecha"
@@ -36,7 +37,8 @@
             app:layout_constraintHorizontal_bias="0.455"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.001" />
+            app:layout_constraintVertical_bias="0.001"
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/editTextDuracionLluvia"
@@ -50,31 +52,34 @@
             app:layout_constraintHorizontal_bias="0.522"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textLluvia"
-            app:layout_constraintVertical_bias="0.3" />
+            app:layout_constraintVertical_bias="0.3"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/textNiebla"
-            android:layout_width="47dp"
-            android:layout_height="20dp"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
             android:text="Niebla"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.145"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextFecha"
-            app:layout_constraintVertical_bias="0.029" />
+            app:layout_constraintVertical_bias="0.029"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/textLluvia"
-            android:layout_width="47dp"
-            android:layout_height="19dp"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
             android:text="Lluvia"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.17"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnerFranjaHoraria"
-            app:layout_constraintVertical_bias="0.028" />
+            app:layout_constraintVertical_bias="0.028"
+            android:textSize="20dp"/>
 
         <Spinner
             android:id="@+id/spinnerNieblaSiNo"
@@ -86,7 +91,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textNiebla"
             app:layout_constraintVertical_bias="0.019"
-            android:entries="@array/siNo"/>
+            android:entries="@array/siNo"
+            android:textSize="20dp"/>
 
         <Spinner
             android:id="@+id/spinnerIntensidad"
@@ -98,7 +104,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textIntensidad"
             app:layout_constraintVertical_bias="0.048"
-            android:entries="@array/intensidadNiebla"/>
+            android:entries="@array/intensidadNiebla"
+            android:textSize="20dp"/>
 
         <Spinner
             android:id="@+id/spinnerCortesAguaSiNo"
@@ -110,7 +117,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textCORTESDEAGUA"
             app:layout_constraintVertical_bias="0.121"
-            android:entries="@array/siNo"/>
+            android:entries="@array/siNo"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/textCORTESDEAGUA"
@@ -123,7 +131,8 @@
             app:layout_constraintHorizontal_bias="0.167"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextDuracionLluvia"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/editTextDuracionCorteAgua"
@@ -137,20 +146,24 @@
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnerCortesAguaSiNo"
-            app:layout_constraintVertical_bias="0.239" />
+            app:layout_constraintVertical_bias="0.2"
+            android:textSize="20dp"/>
 
         <Button
             android:id="@+id/buttonGuardarRegistro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="16dp"
             android:text="Guardar"
+            android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.464"
+            app:layout_constraintHorizontal_bias="0.482"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextDuracionCorteAgua"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.4"
+            app:layout_goneMarginBottom="30dp" />
 
         <Spinner
             android:id="@+id/spinnerFranjaHoraria"
@@ -162,7 +175,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textFranjaHoraria"
             app:layout_constraintVertical_bias="0.038"
-            android:entries="@array/franjaHoraria"/>
+            android:entries="@array/franjaHoraria"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/textIntensidad"
@@ -174,7 +188,8 @@
             app:layout_constraintHorizontal_bias="0.149"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnerNieblaSiNo"
-            app:layout_constraintVertical_bias="0.02" />
+            app:layout_constraintVertical_bias="0.02"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/textFranjaHoraria"
@@ -186,7 +201,8 @@
             app:layout_constraintHorizontal_bias="0.221"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnerIntensidad"
-            app:layout_constraintVertical_bias="0.032" />
+            app:layout_constraintVertical_bias="0.032"
+            android:textSize="20dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

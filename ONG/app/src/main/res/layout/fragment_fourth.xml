@@ -17,19 +17,21 @@ tools:context=".FourthFragment">
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintVertical_bias="0.096"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/bEnviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Enviar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextMililitros"
-        app:layout_constraintVertical_bias="0.482" />
+        app:layout_constraintVertical_bias="0.482"
+        android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/editTextMetrosCubicos"
@@ -44,7 +46,8 @@ tools:context=".FourthFragment">
         app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/textViewLitros"
@@ -56,7 +59,8 @@ tools:context=".FourthFragment">
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextMetrosCubicos"
-        app:layout_constraintVertical_bias="0.124" />
+        app:layout_constraintVertical_bias="0.124"
+        android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/editTextLitros"
@@ -70,7 +74,8 @@ tools:context=".FourthFragment">
         app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLitros"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintVertical_bias="0.111"
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/textViewMililitros"
@@ -82,7 +87,8 @@ tools:context=".FourthFragment">
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextLitros"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintVertical_bias="0.163"
+        android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/editTextMililitros"
@@ -96,5 +102,6 @@ tools:context=".FourthFragment">
         app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewMililitros"
-        app:layout_constraintVertical_bias="0.218" />
+        app:layout_constraintVertical_bias="0.218"
+        android:textSize="20dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

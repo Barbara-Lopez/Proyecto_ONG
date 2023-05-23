@@ -45,11 +45,11 @@ class Adaptador(var registros: List<RegistroNiebla>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var registro = registros[position]
         holder.tvFecha.text = "Fecha: " + registro.fecha
-        holder.tvNiebla.text = "Niebla:" + registro.niebla
+        holder.tvNiebla.text = "Niebla: " + registro.niebla
         holder.tvIntensidadNiebla.text = "Densidad niebla: " + registro.intensidadNiebla
         holder.tvFranjaHoraria.text = "Franja horaria: " + registro.franjaHoraria
         holder.tvDuracionLluvia.text = "Duración lluvia: " + registro.duracionLluvia
-        holder.tvDuracionCortesAgua.text = registro.duracionCortesAgua
+        holder.tvDuracionCortesAgua.text = "Duracion Cortes Agua: " + registro.duracionCortesAgua
         holder.id = position
     }
 }

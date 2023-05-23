@@ -19,7 +19,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.148"
+        android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -33,7 +34,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsuario"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.091"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/btIniciarSesion"
@@ -45,7 +47,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-        app:layout_constraintVertical_bias="0.227" />
+        app:layout_constraintVertical_bias="0.227"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/btRegistrarse"
@@ -59,5 +62,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btIniciarSesion"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:textSize="20dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
