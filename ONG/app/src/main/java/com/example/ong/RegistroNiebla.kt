@@ -1,6 +1,6 @@
 package com.example.ong
 
-class RegistroNiebla(
+class RegistroNiebla( var id:String = "",
                      var fecha:String = "",
                      var niebla:String = "No",
                      var intensidadNiebla:String = "",

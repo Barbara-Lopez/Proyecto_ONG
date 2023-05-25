@@ -61,8 +61,12 @@ class SecondFragment : Fragment() {
                         var usuario:Usuario = Usuario(user,passwd,region)
                         (activity as MainActivity).miViewModel.insertarUsuario(usuario)
                         (activity as MainActivity).user = user
+                        binding.editTextUsuarioRegistro.text.clear()
+                        binding.editTextPasswordRegistro.text.clear()
                         findNavController().navigate(R.id.action_SecondFragment_to_fifthFragment)
                     }else{
+                        binding.editTextUsuarioRegistro.text.clear()
+                        binding.editTextPasswordRegistro.text.clear()
                         findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
                     }
                 }

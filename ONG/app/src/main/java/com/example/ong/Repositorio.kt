@@ -8,6 +8,16 @@ class Repositorio(val miBBDDParse: BBDDParse) {
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
+    suspend fun buscarPorId(id:String): LiveData<RegistroNiebla> {
+        return miBBDDParse.buscarPorId(id)
+    }
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun borrar(id:String){
+        miBBDDParse.borrar(id)
+    }
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
     suspend fun insertar(miRegistroNiebla: RegistroNiebla){
         miBBDDParse.insertar(miRegistroNiebla)
     }

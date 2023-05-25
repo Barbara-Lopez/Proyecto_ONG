@@ -60,6 +60,7 @@ class FourthFragment : Fragment() {
                 var caudalimetro = Caudalimetro(metros3.toInt(),litros.toInt(),mililitros.toInt(),(activity as MainActivity).user
                 ,currentDateandTime)
                 (activity as MainActivity).miViewModel.insertarCaudalimetro(caudalimetro)
+                Toast.makeText(activity, "Caudalimetro guardado", Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_fourthFragment_to_fifthFragment)
 
             }catch (e: Exception) {

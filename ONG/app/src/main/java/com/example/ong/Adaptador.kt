@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 class Adaptador(var registros: List<RegistroNiebla>) :
@@ -15,8 +17,7 @@ class Adaptador(var registros: List<RegistroNiebla>) :
         var tvFranjaHoraria: TextView
         var tvDuracionLluvia: TextView
         var tvDuracionCortesAgua: TextView
-        var id: Int = -1
-
+        var id: String = "-1"
         init {
             tvFecha = v.findViewById(R.id.tvFecha)
             tvNiebla = v.findViewById(R.id.tvNiebla)
@@ -24,10 +25,10 @@ class Adaptador(var registros: List<RegistroNiebla>) :
             tvFranjaHoraria = v.findViewById(R.id.tvFranjaHoraria)
             tvDuracionLluvia = v.findViewById(R.id.tvDuracionLluvia)
             tvDuracionCortesAgua = v.findViewById(R.id.tvDuracionCortesAgua)
-            /*v.setOnClickListener {
+            v.setOnClickListener {
                 val bundle = bundleOf("id" to id)
-                v.findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,bundle)
-            }*/
+                v.findNavController().navigate(R.id.action_fifthFragment_to_thirdFragment,bundle)
+            }
         }
     }
 
@@ -50,6 +51,6 @@ class Adaptador(var registros: List<RegistroNiebla>) :
         holder.tvFranjaHoraria.text = "Franja horaria: " + registro.franjaHoraria
         holder.tvDuracionLluvia.text = "Duración lluvia: " + registro.duracionLluvia
         holder.tvDuracionCortesAgua.text = "Duracion Cortes Agua: " + registro.duracionCortesAgua
-        holder.id = position
+        holder.id = registro.id
     }
 }

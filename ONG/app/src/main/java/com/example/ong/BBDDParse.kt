@@ -17,19 +17,45 @@ class BBDDParse {
                     // Adding objects into the Array
                     val registro = objects.map { i ->
                         RegistroNiebla(
-                            i.getString("fecha") ?: "",
-                            i.getString("niebla") ?: "",
-                            i.getString("intensidadNiebla") ?: "",
-                            i.getString("franjaHoraria") ?: "",
-                            i.getString("duracionLluvia") ?: "",
-                            i.getString("duracionCortesAgua") ?: "",
-                            i.getString("user") ?: ""
+                            i.objectId,
+                        i.getString("fecha") ?: "",
+                        i.getString("niebla") ?: "",
+                        i.getString("intensidadNiebla") ?: "",
+                        i.getString("franjaHoraria") ?: "",
+                        i.getString("duracionLluvia") ?: "",
+                        i.getString("duracionCortesAgua") ?: "",
+                        i.getString("user") ?: ""
                         )
                     }
                     misRegistros.postValue(registro)
                 }
             }
         return misRegistros
+    }
+    fun buscarPorId(id: String): LiveData<RegistroNiebla> {
+        val miRegistro = MutableLiveData<RegistroNiebla>()
+        val query = ParseQuery.getQuery<ParseObject>("RegistroNiebla")
+        // Query Parameters
+        query.whereEqualTo("objectId", id)
+        // How we need retrive exactly one result we can use the getFirstInBackground method
+        query.getFirstInBackground { i, parseException ->
+            if (parseException == null) {
+                val registro = RegistroNiebla(
+                    i.objectId,
+                    i.getString("fecha") ?: "",
+                    i.getString("niebla") ?: "",
+                    i.getString("intensidadNiebla") ?: "",
+                    i.getString("franjaHoraria") ?: "",
+                    i.getString("duracionLluvia") ?: "",
+                    i.getString("duracionCortesAgua") ?: "",
+                    i.getString("user") ?: ""
+                )
+                miRegistro.postValue(registro)
+            } else {
+                throw Exception(parseException)
+            }
+        }
+        return miRegistro
     }
     fun insertar(misRegistros:RegistroNiebla) {
         val registroNieblas = ParseObject("RegistroNiebla")
@@ -100,5 +126,23 @@ class BBDDParse {
             }
         }
     }
+    fun borrar(id: String){
+        val query = ParseQuery.getQuery<ParseObject>("RegistroNiebla")
+        // Query Parameters
+        query.whereEqualTo("objectId", id)
+        // How we need retrive exactly one result we can use the getFirstInBackground method
+        query.getFirstInBackground{ parseObject, parseException ->
+            if (parseException == null) {
+                parseObject.deleteInBackground {
+                    if (it != null) {
+                        throw Exception(it.localizedMessage)
+                    }
+                }
+            }
+            else {
+                throw Exception (parseException.localizedMessage)
+            }
 
+        }
+    }
 }

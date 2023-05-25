@@ -10,9 +10,16 @@ class RegistroNieblaViewModel(private val miRepositorio: Repositorio): ViewModel
     {
         lateinit var listaRegistros: LiveData<List<RegistroNiebla>>
         lateinit var listaUser: LiveData<List<Usuario>>
+        lateinit var registro: LiveData<RegistroNiebla>
 
         fun insertar(miRegistroNiebla: RegistroNiebla) = viewModelScope.launch {
             miRepositorio.insertar(miRegistroNiebla)
+        }
+        fun borrar(id: String) = viewModelScope.launch {
+            miRepositorio.borrar(id)
+        }
+        fun buscarPorId(id:String) = viewModelScope.launch {
+            registro = miRepositorio.buscarPorId(id)
         }
 
         fun cogerUsuario(nombre: String) = viewModelScope.launch {
