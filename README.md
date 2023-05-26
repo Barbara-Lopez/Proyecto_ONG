@@ -1,5 +1,5 @@
 # Proyecto_ONG
-**Este proyecto está hecho por Nerea y Bárbara**
+**Este proyecto está hecho por Nerea Aguillo y Bárbara López**
 
 [Sketches](https://github.com/Barbara-Lopez/Proyecto_ONG/edit/main/Registro.pdf "Sketches")
 
