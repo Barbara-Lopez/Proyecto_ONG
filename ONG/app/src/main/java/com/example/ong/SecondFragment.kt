@@ -63,6 +63,7 @@ class SecondFragment : Fragment() {
                         (activity as MainActivity).user = user
                         binding.editTextUsuarioRegistro.text.clear()
                         binding.editTextPasswordRegistro.text.clear()
+                        Toast.makeText(activity,"Usuario "+ user+ " creado",Toast.LENGTH_LONG).show()
                         findNavController().navigate(R.id.action_SecondFragment_to_fifthFragment)
                     }else{
                         binding.editTextUsuarioRegistro.text.clear()
