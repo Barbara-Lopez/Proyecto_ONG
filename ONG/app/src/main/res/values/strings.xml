@@ -14,11 +14,13 @@
         <item>Choquemarca</item>
     </string-array>
     <string-array name="intensidadNiebla">
+        <item></item>
         <item>Intensa</item>
         <item>Normal</item>
         <item>Poco intensa</item>
     </string-array>
     <string-array name="franjaHoraria">
+        <item></item>
         <item>6:00 a 9:00</item>
         <item>9:00 a 12:00</item>
         <item>12:00 a 14:00</item>

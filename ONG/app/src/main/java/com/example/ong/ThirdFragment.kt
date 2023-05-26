@@ -79,36 +79,38 @@ class ThirdFragment : Fragment() {
                         binding.spinnerNieblaSiNo.setSelection(0)
                     }else{
                         binding.spinnerNieblaSiNo.setSelection(1)
-                    }
-                    if(it.intensidadNiebla == "Intensa"){
                         binding.spinnerIntensidad.setSelection(0)
-                    }
-                    if(it.intensidadNiebla == "Normal"){
-                        binding.spinnerIntensidad.setSelection(1)
-                    }
-                    if(it.intensidadNiebla == "Poco intensa"){
-                        binding.spinnerIntensidad.setSelection(2)
-                    }
-                    if(it.franjaHoraria == "6:00 a 9:00"){
                         binding.spinnerFranjaHoraria.setSelection(0)
                     }
-                    if(it.franjaHoraria == "9:00 a 12:00"){
+                    if(it.intensidadNiebla == "Intensa"){
+                        binding.spinnerIntensidad.setSelection(1)
+                    }
+                    if(it.intensidadNiebla == "Normal"){
+                        binding.spinnerIntensidad.setSelection(2)
+                    }
+                    if(it.intensidadNiebla == "Poco intensa"){
+                        binding.spinnerIntensidad.setSelection(3)
+                    }
+                    if(it.franjaHoraria == "6:00 a 9:00"){
                         binding.spinnerFranjaHoraria.setSelection(1)
                     }
-                    if(it.franjaHoraria == "12:00 a 14:00"){
+                    if(it.franjaHoraria == "9:00 a 12:00"){
                         binding.spinnerFranjaHoraria.setSelection(2)
                     }
-                    if(it.franjaHoraria == "15:00 a 18:00"){
+                    if(it.franjaHoraria == "12:00 a 14:00"){
                         binding.spinnerFranjaHoraria.setSelection(3)
                     }
-                    if(it.franjaHoraria == "18:00 a 21:00"){
+                    if(it.franjaHoraria == "15:00 a 18:00"){
                         binding.spinnerFranjaHoraria.setSelection(4)
                     }
-                    if(it.franjaHoraria == "21:00 a 24:00"){
+                    if(it.franjaHoraria == "18:00 a 21:00"){
                         binding.spinnerFranjaHoraria.setSelection(5)
                     }
-                    if(it.franjaHoraria == "24:00 a 6:00"){
+                    if(it.franjaHoraria == "21:00 a 24:00"){
                         binding.spinnerFranjaHoraria.setSelection(6)
+                    }
+                    if(it.franjaHoraria == "24:00 a 6:00"){
+                        binding.spinnerFranjaHoraria.setSelection(7)
                     }
                     if (it.duracionLluvia == "0") {
                         binding.spinnerLluviaSiNo.setSelection(1)

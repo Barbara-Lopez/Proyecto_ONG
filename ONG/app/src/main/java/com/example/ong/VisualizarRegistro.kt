@@ -85,6 +85,6 @@ class VisualizarRegistro : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        (activity as MainActivity).miViewModel.listaRegistros.removeObservers(activity as MainActivity)
+        /*(activity as MainActivity).miViewModel.listaRegistros.removeObservers(activity as MainActivity)*/
     }
 }
