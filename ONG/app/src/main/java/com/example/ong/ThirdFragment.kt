@@ -29,6 +29,7 @@ class ThirdFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    var idRegistro:String="-1"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,9 +43,9 @@ class ThirdFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var id=arguments?.getString("id") ?:"-1"
+        idRegistro=arguments?.getString("id") ?:"-1"
         var regsitro = RegistroNiebla()
-        if (id == "-1"){
+        if (idRegistro == "-1"){
             binding.bEliminar.isEnabled = false
             binding.bEliminar.isVisible = false
             binding.buttonGuardarRegistro.isEnabled = true
@@ -71,7 +72,7 @@ class ThirdFragment : Fragment() {
             binding.spinnerCortesAguaSiNo.isEnabled = false
             binding.editTextDuracionCorteAgua.isEnabled = false
             try {
-                (activity as MainActivity).miViewModel.buscarPorId(id)
+                (activity as MainActivity).miViewModel.buscarPorId(idRegistro)
                 (activity as MainActivity).miViewModel.registro.observe(activity as MainActivity){
                     regsitro=it
                     binding.editTextFecha.setText(it.fecha)
@@ -132,7 +133,7 @@ class ThirdFragment : Fragment() {
         }
         binding.bEliminar.setOnClickListener {
             try {
-                (activity as MainActivity).miViewModel.borrar(id)
+                (activity as MainActivity).miViewModel.borrar(idRegistro)
                 Toast.makeText(activity, "Registro borrado", Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment)
 
@@ -227,6 +228,7 @@ class ThirdFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        (activity as MainActivity).miViewModel.registro.removeObservers(activity as MainActivity)
+        if (idRegistro != "-1")
+            (activity as MainActivity).miViewModel.registro.removeObservers(activity as MainActivity)
     }
 }
