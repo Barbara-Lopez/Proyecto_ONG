@@ -1,6 +1,8 @@
 # Proyecto_ONG
 **Este proyecto está hecho por Nerea Aguillo y Bárbara López**
 
+Para entrar a la base de datos es mi correo de clase y la contraseña 12345Abcde
+
 [Sketches](https://github.com/Barbara-Lopez/Proyecto_ONG/edit/main/Registro.pdf "Sketches")
 
 - Una vez inicias la aplicación te encuentras con una pantalla de inicio sesion.
