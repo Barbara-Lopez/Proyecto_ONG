@@ -1,7 +1,7 @@
 # Proyecto_ONG
 **Este proyecto está hecho por Nerea Aguillo y Bárbara López**
 
-Para entrar a la base de datos es mi correo de clase (barbara.lopez@ikasle.egibide.org) y la contraseña 12345Abcde
+Para entrar a la base de datos es el correo de clase (barbara.lopez@ikasle.egibide.org) y la contraseña 12345Abcde
 
 [Sketches](https://github.com/Barbara-Lopez/Proyecto_ONG/edit/main/Registro.pdf "Sketches")
 
