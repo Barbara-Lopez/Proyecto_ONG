@@ -9,4 +9,4 @@
     -  Registrarse: te saldrá una ventana para poder registrar un nuevo usuario donde aparte del usuario y contraseña se añadirá el lugar de donde es el nuevo usuario.
 
 
-Para mas información de la aplicación [pdf]([https://github.com/Barbara-Lopez/Proyecto_ONG/edit/main/Registro.pdf](https://github.com/Barbara-Lopez/Proyecto_ONG/blob/main/ONG/Manual%20de%20usuario%20ONG.pdf) "pdf")
+Para mas información de la aplicación [pdf]([https://github.com/Barbara-Lopez/Proyecto_ONG/edit/main/Registro.pdf](https://github.com/Barbara-Lopez/Proyecto_ONG/blob/main/ONG/Manual%20de%20usuario%20ONG.pdf "pdf")
